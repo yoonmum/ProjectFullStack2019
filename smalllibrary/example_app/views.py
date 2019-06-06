@@ -41,3 +41,24 @@ def add_book(request):
     context['form'] = form
     return render(request, 'addbook.html', context)
 
+# def borrow_book(request,pk):
+#     context = dict()
+#     if request.method =='POST' :
+#         try:
+#             book = Book.objects.get(pk=pk)
+#             amount = int(request.POST['amount'])
+#             book.status == False
+#             book.save()
+#             Transaction.objects.create(
+#                 item =item,
+#                 amount = amount,
+#                 total_price = item.price * amount,
+#             )
+#             return redirect('list_item')
+#         except Exception as e:
+#             print(e)
+#             return redirect('list_item')
+#     else:
+#         item = Item.objects.get(pk=pk)
+#         context = {'item' : item}
+#         return render(request, 'sellitem.html', context)

@@ -15,8 +15,13 @@
 
     <!--Google Font-->
     <link href="https://fonts.googleapis.com/css?family=Alex+Brush|Dancing+Script|Kaushan+Script&display=swap" rel="stylesheet">
-<title>Bakery House</title>
+<title>WBB Library</title>
 <style>
+     
+    p,h1,h2,h3,h4,h5,h6,a{
+        font-family: 'PT Sans', sans-serif !important;      
+    }
+   
     .menu-name{
         background-color: #736453;
         color:#fff !important;
@@ -35,15 +40,15 @@
         
                 <div class="uk-navbar-center-left"><div>
                     <ul class="uk-navbar-nav">
-                        <li class="uk-active"><a href="#aboutus" style="font-family: 'Kaushan Script', cursive;color:#fff" uk-scroll>About Us</a></li>
-                        <li class="uk-active"><a href="#services" style="font-family: 'Kaushan Script', cursive;color:#fff" uk-scroll>Our Services</a></li>
+                        <li class="uk-active"><a href="#aboutus" style="color:#fff" uk-scroll>About Us</a></li>
+                        <li class="uk-active"><a href="#services" style="color:#fff" uk-scroll>Our Services</a></li>
                     </ul>
                 </div></div>
-                <a class="uk-navbar-item uk-logo" href="#" style="font-family: 'Alex Brush', cursive;color:#fff;font-size: 50px" uk-scroll>Bakery  House</a>
+                <a class="uk-navbar-item uk-logo" href="#" style="color:#fff;font-size: 40px" uk-scroll>-----</a>
                 <div class="uk-navbar-center-right"><div>
                     <ul class="uk-navbar-nav">
-                        <li class="uk-active"><a href="#menu" style="font-family: 'Kaushan Script', cursive;color:#fff" uk-scroll>Menu</a></li>
-                        <li class="uk-active"><a href="#contact" style="font-family: 'Kaushan Script', cursive;color:#fff"uk-scroll>Contact us</a></li>
+                        <li class="uk-active"><a href="#menu" style="color:#fff" uk-scroll>Books</a></li>
+                        <li class="uk-active"><a href="#contact" style="color:#fff"uk-scroll>Contact us</a></li>
                     </ul>
                 </div></div>
         
@@ -51,8 +56,8 @@
         </nav>
     </div>
 
-    <div class="uk-height-large uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="{% static "images/bg1.jpg" %}" uk-img>
-        <h1 style="font-family: 'Alex Brush', cursive" class="uk-text-bold uk-heading-xlarge">Bakery  House</h1>
+    <div class="uk-height-large uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="{% static "images/b1.jpg" %}" uk-img>
+        <h1 style="font-family: 'Alex Brush', cursive" class="uk-text-bold uk-heading-xlarge">WEBAREBEARS Library</h1>
     </div>
     <div class="uk-section" style="background-color: #736453" id="aboutus">
         <div class="uk-container">
@@ -68,65 +73,65 @@
     <div class="uk-section uk-section-default" id="menu">
         <div class="uk-container">
 
-            <h1 class="uk-heading-line uk-text-center uk-margin-medium-bottom" style="font-family: 'Dancing Script', cursive;"><span>Recommended Menu</span></h1>
+            <h1 class="uk-heading-line uk-text-center uk-margin-medium-bottom" style="font-family: 'Dancing Script', cursive;"><span>Recommended Books</span></h1>
             <div class="uk-grid-match uk-child-width-1-3@m" uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 400" uk-grid>
                 <div>
                     <div class="uk-card uk-card-default uk-box-shadow-large">
                         <div class="uk-card-media-top uk-inline-clip uk-transition-toggle" tabindex="0">
-                            <img class="uk-transition-scale-up uk-transition-opaque" src="{% static "images/menu1.jpg" %}" alt="">
+                            <img class="uk-transition-scale-up uk-transition-opaque" src="{% static "images/book1.jpg" %}" alt="">
                         </div>
                         <div class="uk-card-body uk-padding-small menu-name">
-                            <h3 class="uk-text-center uk-light" style="font-family: 'Kaushan Script', cursive;">Menu 1</h3>
+                            <h3 class="uk-text-center uk-light" style="font-family: 'Kaushan Script', cursive;">Book 1</h3>
                         </div>
                     </div>
                 </div>
                 <div>
                     <div class="uk-card uk-card-default uk-box-shadow-large">
                         <div class="uk-card-media-top uk-inline-clip uk-transition-toggle" tabindex="0">
-                            <img class="uk-transition-scale-up uk-transition-opaque" src="{% static "images/menu2.jpg" %}" alt="">
+                            <img class="uk-transition-scale-up uk-transition-opaque" src="{% static "images/book2.jpg" %}" alt="">
                         </div>
                         <div class="uk-card-body uk-padding-small menu-name">
-                            <h3 class="uk-text-center uk-light" style="font-family: 'Kaushan Script', cursive;">Menu 2</h3>
+                            <h3 class="uk-text-center uk-light" style="font-family: 'Kaushan Script', cursive;">Book 2</h3>
                         </div>
                     </div>
                 </div>
                 <div>
                     <div class="uk-card uk-card-default uk-box-shadow-xlarge">
                         <div class="uk-card-media-top uk-inline-clip uk-transition-toggle" tabindex="0">
-                            <img class="uk-transition-scale-up uk-transition-opaque" src="{% static "images/menu3.jpg" %}" alt="">
+                            <img class="uk-transition-scale-up uk-transition-opaque" src="{% static "images/book3.jpg" %}" alt="">
                         </div>
                         <div class="uk-card-body uk-padding-small menu-name">
-                            <h3 class="uk-text-center uk-light" style="font-family: 'Kaushan Script', cursive;">Menu 2</h3>
+                            <h3 class="uk-text-center uk-light" style="font-family: 'Kaushan Script', cursive;">Book 3</h3>
                         </div>
                     </div>
                 </div>
                 <div>
                     <div class="uk-card uk-card-default uk-box-shadow-large">
                         <div class="uk-card-media-top uk-inline-clip uk-transition-toggle" tabindex="0">
-                            <img class="uk-transition-scale-up uk-transition-opaque" src="{% static "images/menu4.jpg" %}" alt="">
+                            <img class="uk-transition-scale-up uk-transition-opaque" src="{% static "images/book4.jpg" %}" alt="">
                         </div>
                         <div class="uk-card-body uk-padding-small menu-name">
-                            <h3 class="uk-text-center uk-light" style="font-family: 'Kaushan Script', cursive;">Menu 4</h3>
+                            <h3 class="uk-text-center uk-light" style="font-family: 'Kaushan Script', cursive;">Book 4</h3>
                         </div>
                     </div>
                 </div>
                 <div>
                     <div class="uk-card uk-card-default uk-box-shadow-large">
                         <div class="uk-card-media-top uk-inline-clip uk-transition-toggle" tabindex="0">
-                            <img class="uk-transition-scale-up uk-transition-opaque" src="{% static "images/menu5.jpg" %}" alt="">
+                            <img class="uk-transition-scale-up uk-transition-opaque" src="{% static "images/book5.jpg" %}" alt="">
                         </div>
                         <div class="uk-card-body uk-padding-small menu-name">
-                            <h3 class="uk-text-center uk-light" style="font-family: 'Kaushan Script', cursive;">Menu 5</h3>
+                            <h3 class="uk-text-center uk-light" style="font-family: 'Kaushan Script', cursive;">Book 5</h3>
                         </div>
                     </div>
                 </div>
                 <div>
                     <div class="uk-card uk-card-default uk-box-shadow-xlarge">
                         <div class="uk-card-media-top uk-inline-clip uk-transition-toggle" tabindex="0">
-                            <img class="uk-transition-scale-up uk-transition-opaque" src="{% static "images/menu6.jpg" %}" alt="">
+                            <img class="uk-transition-scale-up uk-transition-opaque" src="{% static "images/book6.jpg" %}" alt="">
                         </div>
                         <div class="uk-card-body uk-padding-small menu-name">
-                            <h3 class="uk-text-center uk-light" style="font-family: 'Kaushan Script', cursive;">Menu 6</h3>
+                            <h3 class="uk-text-center uk-light" style="font-family: 'Kaushan Script', cursive;">Book 6</h3>
                         </div>
                     </div>
                 </div>
@@ -134,7 +139,7 @@
 
         </div>
     </div>
-    <div id="services" class="uk-background-fixed uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="{% static "images/bg2.jpg" %}" uk-img>
+    <div id="services" class="uk-background-fixed uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light" data-src="{% static "images/b2.jpg" %}" uk-img>
         <div class="uk-container">
 
             <h1 class="uk-heading-line uk-text-center" style="font-family: 'Dancing Script', cursive;color: #fff"><span>Our Services</span></h1>
@@ -159,10 +164,10 @@
 
             <h1 class="uk-heading-line uk-text-center" style="font-family: 'Dancing Script', cursive;color: #fff"><span>Contact Us</span></h1>
             <ul class="uk-list uk-text-center">
-                <li style="font-family: 'Kaushan Script', cursive;color: #fff">Tell: 099-999-999</li>
-                <li style="font-family: 'Kaushan Script', cursive;color: #fff">E-mail: bakeryhouse@gmail.com</li>
-                <li style="font-family: 'Kaushan Script', cursive;color: #fff">facebook: Bakery house</li>
-                <li style="font-family: 'Kaushan Script', cursive;color: #fff">instagram: Bakery_house</li>
+                <li style="color: #fff">Tell: 099-999-999</li>
+                <li style="color: #fff">E-mail: webarebears@gmail.com</li>
+                <li style="color: #fff">facebook: webarebears library</li>
+                <li style="color: #fff">instagram: webarebears_library</li>
                 <li><a href="" class="uk-icon-button uk-margin-small-right" uk-icon="facebook"></a><a href="" class="uk-icon-button uk-margin-small-right" uk-icon="instagram"></a><a href="" class="uk-icon-button uk-margin-small-right" uk-icon="twitter"></a></li>
             </ul>
         </div>

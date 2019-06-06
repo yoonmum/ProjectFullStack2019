@@ -19,15 +19,15 @@ class Book(models.Model):
     binding = models.ForeignKey(Binding, on_delete=models.PROTECT)
     year = models.PositiveSmallIntegerField()
     publisher = models.ForeignKey(Publisher, on_delete=models.SET_NULL,null=True)
-
+    status = models.BooleanField(default=True) 
     def __str__(self):
-        return self.name
+        return self.title+self.status
 
 class Borrow(models.Model):
     borrower = models.ForeignKey(User, on_delete=models.PROTECT)
     book = models.ForeignKey(Book, on_delete=models.PROTECT)
     def __str__(self):
-        return self.book.name + " : "+self.borrower.name
+        return self.book.title + " : "+self.borrower.first_name
     
 class Transaction(models.Model):
     book = models.ForeignKey(Book, on_delete=models.PROTECT)
@@ -36,7 +36,7 @@ class Transaction(models.Model):
     created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return "Name: {} Book: {} {}".format(self.actor, self.book.name,str(self.created))
+        return "Name: {} Book: {} {}".format(self.actor.fisrt_name, self.book.title,str(self.created))
         # return "Name: "+str(self.actor)+"Book: "+self.book.name +": "+ str(self.created)
 
 

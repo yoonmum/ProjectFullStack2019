@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from .models import Binding, Publisher, Transaction,Book ,Borrow
+from .forms import BookForm
 # Create your views here.
 
 @login_required
@@ -9,14 +10,14 @@ def auth_page(request):
     return render(request, 'example_app/auth_page.html')
 
 def home(request):
-    context = dict()
+    # context = dict()
 
-    if request.user.is_authenticated:
-        context['greeting'] = 'Welcome Back {}'.format(request.user)
-    else:
-        context['greeting'] = 'Welcome Anonymous'
+    # if request.user.is_authenticated:
+    #     context['greeting'] = 'Welcome Back {}'.format(request.user)
+    # else:
+    #     context['greeting'] = 'Welcome Anonymous'
 
-    return render(request, 'example_app/home.html', context)
+    return render(request, 'example_app/index2.html')
 
 @login_required
 def logoutView(request):
@@ -31,11 +32,12 @@ def list_book(request):
 def add_book(request):
     context = dict()
     if request.method == 'POST':
-        form = ItemForm(request.POST, request.FILES)
+        form = BookForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('list_book')
     else:
-        form = ItemForm()
+        form = BookForm()
     context['form'] = form
     return render(request, 'addbook.html', context)
+

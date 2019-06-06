@@ -6,5 +6,5 @@ app_name = 'example_app'
 urlpatterns = [
     path('', home, name='home'),
     path('auth_page/', auth_page, name='auth_page'),
-    path('logout/', logoutView, name='logout'),
+    path('logout/', logoutView, name='logout'),   
 ]

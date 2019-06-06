@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import logout
+from django.contrib.auth import logout , User
 from .models import Binding, Publisher, Transaction,Book ,Borrow
 from .forms import BookForm
 # Create your views here.
@@ -27,7 +27,7 @@ def logoutView(request):
 def list_book(request):
     context = dict()
     context['books'] = Book.objects.all().order_by('book')
-    return render(request, 'listbook.html', context)
+    return render(request, 'example_app/listbook.html', context)
 
 def add_book(request):
     context = dict()
@@ -39,26 +39,31 @@ def add_book(request):
     else:
         form = BookForm()
     context['form'] = form
-    return render(request, 'addbook.html', context)
+    return render(request, 'example_app/addbook.html', context)
 
-# def borrow_book(request,pk):
-#     context = dict()
-#     if request.method =='POST' :
-#         try:
-#             book = Book.objects.get(pk=pk)
-#             amount = int(request.POST['amount'])
-#             book.status == False
-#             book.save()
-#             Transaction.objects.create(
-#                 item =item,
-#                 amount = amount,
-#                 total_price = item.price * amount,
-#             )
-#             return redirect('list_item')
-#         except Exception as e:
-#             print(e)
-#             return redirect('list_item')
-#     else:
-#         item = Item.objects.get(pk=pk)
-#         context = {'item' : item}
-#         return render(request, 'sellitem.html', context)
+def borrow_book(request,pk):
+    context = dict()
+    if request.method =='POST' :
+        try:
+            actor = User.objects.fisrt_name
+            book = Book.objects.get(pk=pk)
+            status = bool(request.POST['status'])
+            if status == True : 
+                book.status = "False"
+                book.save()
+                Transaction.objects.create(
+                    actor = actor,
+                    book =book,
+                # status = status,
+                # total_price = item.price * amount,
+                )
+                return redirect('listbook)
+            else status == False :
+                 return redirect('list_item')
+        except Exception as e:
+            print(e)
+            return redirect('list_item')
+    else:
+        item = Item.objects.get(pk=pk)
+        context = {'item' : item}
+        return render(request, 'sellitem.html', context)

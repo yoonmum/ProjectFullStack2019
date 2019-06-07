@@ -10,14 +10,16 @@ def auth_page(request):
     return render(request, 'example_app/auth_page.html')
 
 def home(request):
-    #  context = dict()
+    context = dict()
 
-    #  if request.user.is_authenticated:
-    #      context['greeting'] = 'Welcome Back {}'.format(request.user)
-    #  else:
-    #      context['greeting'] = 'Welcome Anonymous'
+    if request.user.is_authenticated:
+        context['greeting'] = 'Welcome Back {}'.format(request.user)
+    else:
+        context['greeting'] = 'Welcome Anonymous'
 
-    return render(request, 'example_app/index2.html')
+    return render(request, 'example_app/home.html', context)
+
+    # return render(request, 'example_app/index2.html')
 
 @login_required
 def logoutView(request):

@@ -41,7 +41,7 @@ def add_book(request):
         form = BookForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('list_book')
+            return redirect('home')
     else:
         form = BookForm()
     context['form'] = form
@@ -49,27 +49,30 @@ def add_book(request):
 
 def borrow_book(request,pk):
     context = dict()
-    if request.method =='POST' :
-        try:
-            actor = User.objects.fisrt_name
+    if request.method =='GET' :
+        try: 
             book = Book.objects.get(pk=pk)
-            status = bool(request.POST['status'])
-            if status == True : 
-                book.status = "False"
+            actor = request.user
+           
+            if book.status == True : 
+                book.status = False
                 book.save()
                 Transaction.objects.create(
                     actor = actor,
-                    book =book,
-                # status = status,
-                # total_price = item.price * amount,
+                    book = book,
+                    action = "borrow"
                 )
-                return redirect('listbook')
+                Borrow.objects.create(
+                    borrower = actor,
+                    book = book,
+                )
+                return redirect('home')
             else:
-                 return redirect('listbook')
+                return redirect('home')
         except Exception as e:
             print(e)
-            return redirect('listbook')
-    else:
-        book = Book.objects.get(pk=pk)
-        context = {'book' : book}
-        return render(request, 'borrowbook.html', context)
+            raise e
+    # else:
+    #     book = Book.objects.get(pk=pk)
+    #     context = {'book' : book}
+    #     return render(request, 'borrowbook.html', context)

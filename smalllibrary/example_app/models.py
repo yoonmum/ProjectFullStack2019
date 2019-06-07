@@ -20,13 +20,14 @@ class Book(models.Model):
     year = models.PositiveSmallIntegerField()
     publisher = models.ForeignKey(Publisher, on_delete=models.SET_NULL,null=True)
     image = models.ImageField(blank=True)
-    status = models.CharField(max_length=5) 
+    status = models.BooleanField(default=True) 
     def __str__(self):
-        return self.title+self.status
+        return self.title
 
 class Borrow(models.Model):
     borrower = models.ForeignKey(User, on_delete=models.PROTECT)
     book = models.ForeignKey(Book, on_delete=models.PROTECT)
+    
     def __str__(self):
         return self.book.title + " : "+self.borrower.first_name
     

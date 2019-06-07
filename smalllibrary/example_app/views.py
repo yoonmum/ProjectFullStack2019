@@ -19,7 +19,11 @@ def home(request):
 
     return render(request, 'example_app/home.html', context)
 
-    # return render(request, 'example_app/index2.html')
+    
+def show(request):
+    context = dict()
+    return render(request, 'example_app/index2.html', context)
+
 
 @login_required
 def logoutView(request):

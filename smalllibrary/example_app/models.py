@@ -19,6 +19,7 @@ class Book(models.Model):
     binding = models.ForeignKey(Binding, on_delete=models.PROTECT)
     year = models.PositiveSmallIntegerField()
     publisher = models.ForeignKey(Publisher, on_delete=models.SET_NULL,null=True)
+    image = models.ImageField(blank=True)
     status = models.CharField(max_length=5) 
     def __str__(self):
         return self.title+self.status

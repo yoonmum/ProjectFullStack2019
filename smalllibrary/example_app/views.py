@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import logout , User
+from django.contrib.auth import logout
 from .models import Binding, Publisher, Transaction,Book ,Borrow
 from .forms import BookForm
 # Create your views here.
@@ -10,12 +10,12 @@ def auth_page(request):
     return render(request, 'example_app/auth_page.html')
 
 def home(request):
-    # context = dict()
+    #  context = dict()
 
-    # if request.user.is_authenticated:
-    #     context['greeting'] = 'Welcome Back {}'.format(request.user)
-    # else:
-    #     context['greeting'] = 'Welcome Anonymous'
+    #  if request.user.is_authenticated:
+    #      context['greeting'] = 'Welcome Back {}'.format(request.user)
+    #  else:
+    #      context['greeting'] = 'Welcome Anonymous'
 
     return render(request, 'example_app/index2.html')
 
@@ -57,13 +57,13 @@ def borrow_book(request,pk):
                 # status = status,
                 # total_price = item.price * amount,
                 )
-                return redirect('listbook)
-            else status == False :
-                 return redirect('list_item')
+                return redirect('listbook')
+            else:
+                 return redirect('listbook')
         except Exception as e:
             print(e)
-            return redirect('list_item')
+            return redirect('listbook')
     else:
-        item = Item.objects.get(pk=pk)
-        context = {'item' : item}
-        return render(request, 'sellitem.html', context)
+        book = Book.objects.get(pk=pk)
+        context = {'book' : book}
+        return render(request, 'borrowbook.html', context)
